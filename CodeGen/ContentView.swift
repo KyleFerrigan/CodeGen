@@ -25,6 +25,12 @@ struct ContentView: View {
                     .resizable()
                     .scaledToFit()
                     .padding()
+                    .contextMenu{
+                        let image = generateQRCode(from: textIn)
+                        let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
+                        
+                        ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
+                    }
                 
                 TextField("Insert data here", text: $textIn)
                 
@@ -48,6 +54,30 @@ struct ContentView: View {
                     }
                 }
                 */
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(
+                            action: {
+                                //TODO: Open Settings Page
+                                print("Settings Button tapped!")
+                            }
+                        ){
+                            Label("Settings", systemImage: "gear")
+                        }
+                    }
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(
+                            action: {
+                                //TODO: Add current QR code string to store items (use cloudkit if possible)
+                                print("Favorite Button tapped!")
+                            }
+                        ){
+                            Label("Favorite", systemImage: "star.circle")
+                        }
+                    }
+                }
+                .navigationTitle("CodeGen")
+                .navigationBarTitleDisplayMode(.inline)
             }
         } 
         detail: {
@@ -68,6 +98,7 @@ struct ContentView: View {
         return UIImage(systemName: "xmark.circle") ?? UIImage()
     }
     
+    /* DEFAULT DATA
     private func addItem() {
         withAnimation {
             let newItem = Item(timestamp: Date())
@@ -82,7 +113,32 @@ struct ContentView: View {
             }
         }
     }
+    */
 }
+
+extension UIImage {
+    func scalePreservingAspectRatio(targetSize: CGSize) -> UIImage {
+        let widthRatio = targetSize.width / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        let scaleFactor = max(widthRatio, heightRatio)
+        
+        let scaledImageSize = CGSize(
+            width: size.width * scaleFactor,
+            height: size.height * scaleFactor
+        )
+        
+        UIGraphicsBeginImageContextWithOptions(scaledImageSize, false, 0.0)
+        let context = UIGraphicsGetCurrentContext()
+        context?.interpolationQuality = .none
+        self.draw(in: CGRect(origin: .zero, size: scaledImageSize))
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return scaledImage
+    }
+}
+
 
 #Preview {
     ContentView()
