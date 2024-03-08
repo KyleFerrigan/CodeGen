@@ -7,15 +7,29 @@
 
 import SwiftUI
 import SwiftData
+import CoreImage.CIFilterBuiltins
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    let context = CIContext()
+    let filter = CIFilter.qrCodeGenerator()
+    @State var textIn: String = ""
 
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
+                
+                Image(uiImage: generateQRCode(from: textIn))
+                    .interpolation(.none)
+                    .resizable()
+                    .scaledToFit()
+                    .padding()
+                
+                TextField("Insert data here", text: $textIn)
+                
+                /* DEFAULT DATA
+                 ForEach(items) { item in
                     NavigationLink {
                         Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
                     } label: {
@@ -33,12 +47,27 @@ struct ContentView: View {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
+                */
             }
-        } detail: {
+        } 
+        detail: {
             Text("Select an item")
         }
     }
+    
+    // MARK: QR Code Generator
+    func generateQRCode(from string: String) -> UIImage {
+        let data = Data(string.utf8)
+        filter.setValue(data, forKey: "inputMessage")
 
+        if let qrCodeImage = filter.outputImage {
+            if let qrCodeCGImage = context.createCGImage(qrCodeImage, from: qrCodeImage.extent) {
+                return UIImage(cgImage: qrCodeCGImage)
+            }
+        }
+        return UIImage(systemName: "xmark.circle") ?? UIImage()
+    }
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(timestamp: Date())
