@@ -134,7 +134,6 @@ extension UIImage {
         self.draw(in: CGRect(origin: .zero, size: scaledImageSize))
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        
         return scaledImage
     }
 }
