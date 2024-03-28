@@ -15,6 +15,9 @@
 		FD5740592B9B71DD0040A67E /* CodeGenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740582B9B71DD0040A67E /* CodeGenTests.swift */; };
 		FD5740632B9B71DD0040A67E /* CodeGenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740622B9B71DD0040A67E /* CodeGenUITests.swift */; };
 		FD5740652B9B71DD0040A67E /* CodeGenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740642B9B71DD0040A67E /* CodeGenUITestsLaunchTests.swift */; };
+		FDBDE3E32BB5D4200022BF5D /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE3E22BB5D4200022BF5D /* AppIconView.swift */; };
+		FDC846292BB4758B00681143 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC846282BB4758B00681143 /* SettingsView.swift */; };
+		FDC846352BB48E8700681143 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC846342BB48E8700681143 /* FavoritesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		FD5740712B9B976A0040A67E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FD5740732B9B977A0040A67E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		FD5740752B9B97E00040A67E /* CodeGen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodeGen.entitlements; sourceTree = "<group>"; };
+		FDBDE3E22BB5D4200022BF5D /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
+		FDC846282BB4758B00681143 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FDC846342BB48E8700681143 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,9 @@
 				FD5740712B9B976A0040A67E /* Info.plist */,
 				FD5740452B9B71DC0040A67E /* CodeGenApp.swift */,
 				FD5740472B9B71DC0040A67E /* ContentView.swift */,
+				FDC846342BB48E8700681143 /* FavoritesView.swift */,
+				FDC846282BB4758B00681143 /* SettingsView.swift */,
+				FDBDE3E22BB5D4200022BF5D /* AppIconView.swift */,
 				FD5740492B9B71DC0040A67E /* Item.swift */,
 				FD57404B2B9B71DD0040A67E /* Assets.xcassets */,
 				FD57404D2B9B71DD0040A67E /* Preview Content */,
@@ -274,9 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDC846352BB48E8700681143 /* FavoritesView.swift in Sources */,
 				FD5740482B9B71DC0040A67E /* ContentView.swift in Sources */,
+				FDC846292BB4758B00681143 /* SettingsView.swift in Sources */,
 				FD57404A2B9B71DC0040A67E /* Item.swift in Sources */,
 				FD5740462B9B71DC0040A67E /* CodeGenApp.swift in Sources */,
+				FDBDE3E32BB5D4200022BF5D /* AppIconView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +447,8 @@
 		FD5740692B9B71DD0040A67E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-BBY AppIcon-Blueberry AppIcon-Classic AppIcon-OLED AppIcon-Teal-Light AppIcon-Teal-OLED";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Teal-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CodeGen/CodeGen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -469,15 +482,14 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				TVOS_DEPLOYMENT_TARGET = 17.0;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Debug;
 		};
 		FD57406A2B9B71DD0040A67E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-BBY AppIcon-Blueberry AppIcon-Classic AppIcon-OLED AppIcon-Teal-Light AppIcon-Teal-OLED";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Teal-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CodeGen/CodeGen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -511,8 +523,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				TVOS_DEPLOYMENT_TARGET = 17.0;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Release;
 		};

@@ -17,9 +17,9 @@ struct ContentView: View {
     @State var textIn: String = ""
 
     var body: some View {
-        NavigationSplitView {
+        NavigationView {
+            //MARK: Main View
             List {
-                
                 Image(uiImage: generateQRCode(from: textIn))
                     .interpolation(.none)
                     .resizable()
@@ -33,55 +33,30 @@ struct ContentView: View {
                     }
                 
                 TextField("Insert data here", text: $textIn)
-                
-                /* DEFAULT DATA
-                 ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
+                NavigationLink(destination: FavoritesView()) {
+                          Text("Favorited QR Codes")
+                        }
             }
+            //MARK: Navigation Toolbar
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-                */
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button(
-                            action: {
-                                //TODO: Open Settings Page
-                                print("Settings Button tapped!")
-                            }
-                        ){
-                            Label("Settings", systemImage: "gear")
+                ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink(destination: SettingsView()) {
+                            Image(systemName: "gear")
                         }
-                    }
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button(
-                            action: {
-                                //TODO: Add current QR code string to store items (use cloudkit if possible)
-                                print("Favorite Button tapped!")
-                            }
-                        ){
-                            Label("Favorite", systemImage: "star.circle")
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(
+                        action: {
+                            //TODO: Add current QR code string to store items (use cloudkit if possible)
+                            print("Favorite Button tapped!")
                         }
+                    ){
+                        Label("Favorite", systemImage: "star.circle")
                     }
                 }
-                .navigationTitle("CodeGen")
-                .navigationBarTitleDisplayMode(.inline)
             }
-        } 
-        detail: {
-            Text("Select an item")
+            .navigationTitle("CodeGen")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     
@@ -97,23 +72,6 @@ struct ContentView: View {
         }
         return UIImage(systemName: "xmark.circle") ?? UIImage()
     }
-    
-    /* DEFAULT DATA
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
-    */
 }
 
 extension UIImage {
