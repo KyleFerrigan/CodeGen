@@ -12,32 +12,12 @@
 		FD57404A2B9B71DC0040A67E /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740492B9B71DC0040A67E /* QRCode.swift */; };
 		FD57404C2B9B71DD0040A67E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD57404B2B9B71DD0040A67E /* Assets.xcassets */; };
 		FD57404F2B9B71DD0040A67E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD57404E2B9B71DD0040A67E /* Preview Assets.xcassets */; };
-		FD5740592B9B71DD0040A67E /* CodeGenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740582B9B71DD0040A67E /* CodeGenTests.swift */; };
-		FD5740632B9B71DD0040A67E /* CodeGenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740622B9B71DD0040A67E /* CodeGenUITests.swift */; };
-		FD5740652B9B71DD0040A67E /* CodeGenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740642B9B71DD0040A67E /* CodeGenUITestsLaunchTests.swift */; };
 		FDBDE3E32BB5D4200022BF5D /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE3E22BB5D4200022BF5D /* AppIconView.swift */; };
 		FDBDE4202BB9DFD20022BF5D /* QRGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE41F2BB9DFD20022BF5D /* QRGeneration.swift */; };
 		FDBDE4222BB9FA9B0022BF5D /* AccentColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE4212BB9FA9B0022BF5D /* AccentColorView.swift */; };
 		FDC846292BB4758B00681143 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC846282BB4758B00681143 /* SettingsView.swift */; };
 		FDC846352BB48E8700681143 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC846342BB48E8700681143 /* FavoritesView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FD5740552B9B71DD0040A67E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD57403A2B9B71DC0040A67E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FD5740412B9B71DC0040A67E;
-			remoteInfo = CodeGen;
-		};
-		FD57405F2B9B71DD0040A67E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD57403A2B9B71DC0040A67E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FD5740412B9B71DC0040A67E;
-			remoteInfo = CodeGen;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FD5740422B9B71DC0040A67E /* CodeGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,11 +26,6 @@
 		FD5740492B9B71DC0040A67E /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		FD57404B2B9B71DD0040A67E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD57404E2B9B71DD0040A67E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FD5740542B9B71DD0040A67E /* CodeGenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeGenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD5740582B9B71DD0040A67E /* CodeGenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenTests.swift; sourceTree = "<group>"; };
-		FD57405E2B9B71DD0040A67E /* CodeGenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeGenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD5740622B9B71DD0040A67E /* CodeGenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenUITests.swift; sourceTree = "<group>"; };
-		FD5740642B9B71DD0040A67E /* CodeGenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FD5740712B9B976A0040A67E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FD5740732B9B977A0040A67E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		FD5740752B9B97E00040A67E /* CodeGen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodeGen.entitlements; sourceTree = "<group>"; };
@@ -69,20 +44,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD5740512B9B71DD0040A67E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FD57405B2B9B71DD0040A67E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,8 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				FD5740442B9B71DC0040A67E /* CodeGen */,
-				FD5740572B9B71DD0040A67E /* CodeGenTests */,
-				FD5740612B9B71DD0040A67E /* CodeGenUITests */,
 				FD5740432B9B71DC0040A67E /* Products */,
 				FD5740722B9B977A0040A67E /* Frameworks */,
 			);
@@ -101,8 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				FD5740422B9B71DC0040A67E /* CodeGen.app */,
-				FD5740542B9B71DD0040A67E /* CodeGenTests.xctest */,
-				FD57405E2B9B71DD0040A67E /* CodeGenUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,23 +86,6 @@
 				FD57404E2B9B71DD0040A67E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		FD5740572B9B71DD0040A67E /* CodeGenTests */ = {
-			isa = PBXGroup;
-			children = (
-				FD5740582B9B71DD0040A67E /* CodeGenTests.swift */,
-			);
-			path = CodeGenTests;
-			sourceTree = "<group>";
-		};
-		FD5740612B9B71DD0040A67E /* CodeGenUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FD5740622B9B71DD0040A67E /* CodeGenUITests.swift */,
-				FD5740642B9B71DD0040A67E /* CodeGenUITestsLaunchTests.swift */,
-			);
-			path = CodeGenUITests;
 			sourceTree = "<group>";
 		};
 		FD5740722B9B977A0040A67E /* Frameworks */ = {
@@ -203,42 +143,6 @@
 			productReference = FD5740422B9B71DC0040A67E /* CodeGen.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FD5740532B9B71DD0040A67E /* CodeGenTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FD57406B2B9B71DD0040A67E /* Build configuration list for PBXNativeTarget "CodeGenTests" */;
-			buildPhases = (
-				FD5740502B9B71DD0040A67E /* Sources */,
-				FD5740512B9B71DD0040A67E /* Frameworks */,
-				FD5740522B9B71DD0040A67E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FD5740562B9B71DD0040A67E /* PBXTargetDependency */,
-			);
-			name = CodeGenTests;
-			productName = CodeGenTests;
-			productReference = FD5740542B9B71DD0040A67E /* CodeGenTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FD57405D2B9B71DD0040A67E /* CodeGenUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FD57406E2B9B71DD0040A67E /* Build configuration list for PBXNativeTarget "CodeGenUITests" */;
-			buildPhases = (
-				FD57405A2B9B71DD0040A67E /* Sources */,
-				FD57405B2B9B71DD0040A67E /* Frameworks */,
-				FD57405C2B9B71DD0040A67E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FD5740602B9B71DD0040A67E /* PBXTargetDependency */,
-			);
-			name = CodeGenUITests;
-			productName = CodeGenUITests;
-			productReference = FD57405E2B9B71DD0040A67E /* CodeGenUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -251,14 +155,6 @@
 				TargetAttributes = {
 					FD5740412B9B71DC0040A67E = {
 						CreatedOnToolsVersion = 15.3;
-					};
-					FD5740532B9B71DD0040A67E = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = FD5740412B9B71DC0040A67E;
-					};
-					FD57405D2B9B71DD0040A67E = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = FD5740412B9B71DC0040A67E;
 					};
 				};
 			};
@@ -276,8 +172,6 @@
 			projectRoot = "";
 			targets = (
 				FD5740412B9B71DC0040A67E /* CodeGen */,
-				FD5740532B9B71DD0040A67E /* CodeGenTests */,
-				FD57405D2B9B71DD0040A67E /* CodeGenUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -289,20 +183,6 @@
 			files = (
 				FD57404F2B9B71DD0040A67E /* Preview Assets.xcassets in Resources */,
 				FD57404C2B9B71DD0040A67E /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FD5740522B9B71DD0040A67E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FD57405C2B9B71DD0040A67E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,37 +204,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD5740502B9B71DD0040A67E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD5740592B9B71DD0040A67E /* CodeGenTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FD57405A2B9B71DD0040A67E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD5740652B9B71DD0040A67E /* CodeGenUITestsLaunchTests.swift in Sources */,
-				FD5740632B9B71DD0040A67E /* CodeGenUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FD5740562B9B71DD0040A67E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FD5740412B9B71DC0040A67E /* CodeGen */;
-			targetProxy = FD5740552B9B71DD0040A67E /* PBXContainerItemProxy */;
-		};
-		FD5740602B9B71DD0040A67E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FD5740412B9B71DC0040A67E /* CodeGen */;
-			targetProxy = FD57405F2B9B71DD0040A67E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FD5740662B9B71DD0040A67E /* Debug */ = {
@@ -562,98 +412,6 @@
 			};
 			name = Release;
 		};
-		FD57406C2B9B71DD0040A67E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TJ8R5XP7FZ;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = KyleFerrigan.CodeGenTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeGen.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CodeGen";
-			};
-			name = Debug;
-		};
-		FD57406D2B9B71DD0040A67E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TJ8R5XP7FZ;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = KyleFerrigan.CodeGenTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeGen.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CodeGen";
-			};
-			name = Release;
-		};
-		FD57406F2B9B71DD0040A67E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TJ8R5XP7FZ;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = KyleFerrigan.CodeGenUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CodeGen;
-			};
-			name = Debug;
-		};
-		FD5740702B9B71DD0040A67E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TJ8R5XP7FZ;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = KyleFerrigan.CodeGenUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CodeGen;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -671,24 +429,6 @@
 			buildConfigurations = (
 				FD5740692B9B71DD0040A67E /* Debug */,
 				FD57406A2B9B71DD0040A67E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FD57406B2B9B71DD0040A67E /* Build configuration list for PBXNativeTarget "CodeGenTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FD57406C2B9B71DD0040A67E /* Debug */,
-				FD57406D2B9B71DD0040A67E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FD57406E2B9B71DD0040A67E /* Build configuration list for PBXNativeTarget "CodeGenUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FD57406F2B9B71DD0040A67E /* Debug */,
-				FD5740702B9B71DD0040A67E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
