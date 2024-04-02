@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		FD5740462B9B71DC0040A67E /* CodeGenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740452B9B71DC0040A67E /* CodeGenApp.swift */; };
 		FD5740482B9B71DC0040A67E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740472B9B71DC0040A67E /* ContentView.swift */; };
-		FD57404A2B9B71DC0040A67E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740492B9B71DC0040A67E /* Item.swift */; };
+		FD57404A2B9B71DC0040A67E /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740492B9B71DC0040A67E /* QRCode.swift */; };
 		FD57404C2B9B71DD0040A67E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD57404B2B9B71DD0040A67E /* Assets.xcassets */; };
 		FD57404F2B9B71DD0040A67E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD57404E2B9B71DD0040A67E /* Preview Assets.xcassets */; };
 		FD5740592B9B71DD0040A67E /* CodeGenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740582B9B71DD0040A67E /* CodeGenTests.swift */; };
 		FD5740632B9B71DD0040A67E /* CodeGenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740622B9B71DD0040A67E /* CodeGenUITests.swift */; };
 		FD5740652B9B71DD0040A67E /* CodeGenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5740642B9B71DD0040A67E /* CodeGenUITestsLaunchTests.swift */; };
 		FDBDE3E32BB5D4200022BF5D /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE3E22BB5D4200022BF5D /* AppIconView.swift */; };
+		FDBDE4202BB9DFD20022BF5D /* QRGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE41F2BB9DFD20022BF5D /* QRGeneration.swift */; };
+		FDBDE4222BB9FA9B0022BF5D /* AccentColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDE4212BB9FA9B0022BF5D /* AccentColorView.swift */; };
 		FDC846292BB4758B00681143 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC846282BB4758B00681143 /* SettingsView.swift */; };
 		FDC846352BB48E8700681143 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC846342BB48E8700681143 /* FavoritesView.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +43,7 @@
 		FD5740422B9B71DC0040A67E /* CodeGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD5740452B9B71DC0040A67E /* CodeGenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenApp.swift; sourceTree = "<group>"; };
 		FD5740472B9B71DC0040A67E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FD5740492B9B71DC0040A67E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		FD5740492B9B71DC0040A67E /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		FD57404B2B9B71DD0040A67E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD57404E2B9B71DD0040A67E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD5740542B9B71DD0040A67E /* CodeGenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeGenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,8 @@
 		FD5740732B9B977A0040A67E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		FD5740752B9B97E00040A67E /* CodeGen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodeGen.entitlements; sourceTree = "<group>"; };
 		FDBDE3E22BB5D4200022BF5D /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
+		FDBDE41F2BB9DFD20022BF5D /* QRGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGeneration.swift; sourceTree = "<group>"; };
+		FDBDE4212BB9FA9B0022BF5D /* AccentColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorView.swift; sourceTree = "<group>"; };
 		FDC846282BB4758B00681143 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FDC846342BB48E8700681143 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,14 +110,13 @@
 		FD5740442B9B71DC0040A67E /* CodeGen */ = {
 			isa = PBXGroup;
 			children = (
-				FD5740752B9B97E00040A67E /* CodeGen.entitlements */,
-				FD5740712B9B976A0040A67E /* Info.plist */,
 				FD5740452B9B71DC0040A67E /* CodeGenApp.swift */,
 				FD5740472B9B71DC0040A67E /* ContentView.swift */,
-				FDC846342BB48E8700681143 /* FavoritesView.swift */,
-				FDC846282BB4758B00681143 /* SettingsView.swift */,
-				FDBDE3E22BB5D4200022BF5D /* AppIconView.swift */,
-				FD5740492B9B71DC0040A67E /* Item.swift */,
+				FDBDE3E62BB9C4620022BF5D /* Favorites */,
+				FDBDE3E42BB9C3D40022BF5D /* Settings */,
+				FDBDE3E52BB9C4500022BF5D /* Models */,
+				FD5740752B9B97E00040A67E /* CodeGen.entitlements */,
+				FD5740712B9B976A0040A67E /* Info.plist */,
 				FD57404B2B9B71DD0040A67E /* Assets.xcassets */,
 				FD57404D2B9B71DD0040A67E /* Preview Content */,
 			);
@@ -151,6 +154,33 @@
 				FD5740732B9B977A0040A67E /* Photos.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDBDE3E42BB9C3D40022BF5D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FDC846282BB4758B00681143 /* SettingsView.swift */,
+				FDBDE3E22BB5D4200022BF5D /* AppIconView.swift */,
+				FDBDE4212BB9FA9B0022BF5D /* AccentColorView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FDBDE3E52BB9C4500022BF5D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FD5740492B9B71DC0040A67E /* QRCode.swift */,
+				FDBDE41F2BB9DFD20022BF5D /* QRGeneration.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FDBDE3E62BB9C4620022BF5D /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				FDC846342BB48E8700681143 /* FavoritesView.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,10 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDBDE4222BB9FA9B0022BF5D /* AccentColorView.swift in Sources */,
 				FDC846352BB48E8700681143 /* FavoritesView.swift in Sources */,
 				FD5740482B9B71DC0040A67E /* ContentView.swift in Sources */,
 				FDC846292BB4758B00681143 /* SettingsView.swift in Sources */,
-				FD57404A2B9B71DC0040A67E /* Item.swift in Sources */,
+				FD57404A2B9B71DC0040A67E /* QRCode.swift in Sources */,
+				FDBDE4202BB9DFD20022BF5D /* QRGeneration.swift in Sources */,
 				FD5740462B9B71DC0040A67E /* CodeGenApp.swift in Sources */,
 				FDBDE3E32BB5D4200022BF5D /* AppIconView.swift in Sources */,
 			);
@@ -476,11 +508,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 17.0;
 			};
 			name = Debug;
@@ -517,11 +549,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 17.0;
 			};
 			name = Release;

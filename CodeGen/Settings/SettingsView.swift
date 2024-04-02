@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct SettingsView: View {
-    
     var body: some View {
         List{
             Section{
                 NavigationLink(destination: AppIconView()) {
                     Text("Change App Icon")
-                        .accentColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                }
+                NavigationLink(destination: AccentColorView()) {
+                    Text("Change Accent Color")
                 }
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
-   
 }
 
 #Preview {
