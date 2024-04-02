@@ -490,7 +490,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CodeGen/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "CodeGen Debug";
+				INFOPLIST_KEY_CFBundleDisplayName = CodeGen;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app allows you to save user generated QR codes to your photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
