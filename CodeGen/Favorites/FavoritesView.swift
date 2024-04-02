@@ -15,7 +15,7 @@ struct FavoritesView: View {
     var body: some View {
         List {
             ForEach (items){ item in
-                Section{
+                VStack{
                     Image(uiImage: generateQRCode(from: item.data!))
                         .interpolation(.none)
                         .resizable()
@@ -27,6 +27,7 @@ struct FavoritesView: View {
                             
                             ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
                         }
+                    Text(item.data!)
                 }
             }
             .onDelete(perform: deleteItems)

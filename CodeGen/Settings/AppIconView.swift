@@ -92,12 +92,13 @@ struct AppIconView: View {
                     Text("Premier Purchase")
                 }
             }
-            
+            #if DEBUG
             //MARK: Debug Section
             Section("Debug"){
                 Text("Device supports icon change: " + String(UIApplication.shared.supportsAlternateIcons))
                 Text("Current app icon: " + iconName)
             }
+            #endif
         }
         .navigationTitle("App Icons")
         .navigationBarTitleDisplayMode(.inline)
