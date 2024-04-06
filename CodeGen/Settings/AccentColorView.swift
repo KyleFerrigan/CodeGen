@@ -39,26 +39,42 @@ struct AccentColorView: View {
             Button(
                 action: {
                     userAccentChoice = 4
-                    print("Teal Button tapped!")
+                    print("Orange Button tapped!")
                 }
             ){
-                Text("Teal")
+                Text("Orange")
             }
             Button(
                 action: {
                     userAccentChoice = 5
-                    print("Pink Button tapped!")
+                    print("Purple Button tapped!")
                 }
             ){
-                Text("Pink")
+                Text("Purple")
             }
             Button(
                 action: {
                     userAccentChoice = 6
+                    print("Yellow Button tapped!")
+                }
+            ){
+                Text("Yellow")
+            }
+            Button(
+                action: {
+                    userAccentChoice = 7
                     print("Mint Button tapped!")
                 }
             ){
                 Text("Mint")
+            }
+            Button(
+                action: {
+                    userAccentChoice = 8
+                    print("Gray Button tapped!")
+                }
+            ){
+                Text("Gray")
             }
         }
         .navigationTitle("AccentColor")

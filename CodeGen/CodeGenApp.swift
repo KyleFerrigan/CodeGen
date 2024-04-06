@@ -77,11 +77,16 @@ struct CodeGenApp: App {
         case 3: 
             return .blue
         case 4:
-            return .teal
+            return .orange
         case 5:
-            return .pink
+            return .purple
         case 6:
+            return .yellow
+        case 7:
             return .mint
+        case 8:
+            return .gray
+            
         default:
             return .accentColor
         }
