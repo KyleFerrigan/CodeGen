@@ -33,6 +33,7 @@ struct ContentView: View {
                     TextField("Type contents of QR code here", text: $textIn)
                         .autocorrectionDisabled()
                         .keyboardType(.asciiCapable)
+                        .autocapitalization(.none)
                 }
                 NavigationLink(destination: FavoritesView()) {
                           Text("Favorited QR Codes")
