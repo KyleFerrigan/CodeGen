@@ -30,6 +30,7 @@ struct ContentView: View {
                     }
                 
                 TextField("Insert data here", text: $textIn)
+                    .autocorrectionDisabled()
                 NavigationLink(destination: FavoritesView()) {
                           Text("Favorited QR Codes")
                         }
