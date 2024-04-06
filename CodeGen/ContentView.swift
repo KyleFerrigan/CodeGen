@@ -17,20 +17,23 @@ struct ContentView: View {
         NavigationStack {
             //MARK: Main View
             List {
-                Image(uiImage: generateQRCode(from: textIn))
-                    .interpolation(.none)
-                    .resizable()
-                    .scaledToFit()
-                    .padding()
-                    .contextMenu{
-                        let image = generateQRCode(from: textIn)
-                        let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
-                        
-                        ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
-                    }
-                
-                TextField("Insert data here", text: $textIn)
-                    .autocorrectionDisabled()
+                Section{
+                    Image(uiImage: generateQRCode(from: textIn))
+                        .interpolation(.none)
+                        .resizable()
+                        .scaledToFit()
+                        .padding()
+                        .contextMenu{
+                            let image = generateQRCode(from: textIn)
+                            let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
+                            
+                            ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
+                        }
+                    
+                    TextField("Type contents of QR code here", text: $textIn)
+                        .autocorrectionDisabled()
+                        .keyboardType(.asciiCapable)
+                }
                 NavigationLink(destination: FavoritesView()) {
                           Text("Favorited QR Codes")
                         }

@@ -86,10 +86,10 @@ struct AppIconView: View {
                     action: {
                         changeIcon(iconName: "AppIcon-BBY")
                         self.iconName = getIconName()
-                        print("Premier Purchase Button tapped!")
+                        print("Best Bargain Button tapped!")
                     }
                 ){
-                    Text("Premier Purchase")
+                    Text("Best Bargain")
                 }
             }
             #if DEBUG
