@@ -9,75 +9,34 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @State var textIn: String = ""
+    
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [QRCode]
+    
     @State private var type = ["Standard", "Email",  "Call", "SMS"]
-    //@State private var selectedType: String = "Standard"
     @State private var selectedType: Int = 0
+    
+    @State var textIn: String = ""
 
     var body: some View {
         //Keeps track if current QR Code has been favorited or not
-        @State var favorited: Bool = checkFavorited(items: self.items, textIn: self.textIn)
+        @State var favorited: Bool = checkFavorited(items: self.items, textIn: formatQRData())
         
         NavigationStack {
             //MARK: Main View
             List {
                 Section{
-                    if (self.selectedType == 0){ // Standard
-                        Image(uiImage: generateQRCode(from: textIn))
-                            .interpolation(.none)
-                            .resizable()
-                            .scaledToFit()
-                            .padding()
-                            .contextMenu{
-                                    let image = generateQRCode(from: textIn)
-                                    let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
-                                    
-                                    ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
-                            }
-                    }
-                    if (self.selectedType == 1){ // Email
-                        Image(uiImage: generateQRCode(from: "mailto:"+textIn))
-                            .interpolation(.none)
-                            .resizable()
-                            .scaledToFit()
-                            .padding()
-                            .contextMenu{
-                                    let image = generateQRCode(from: "mailto:"+textIn)
-                                    let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
-                                    
-                                    ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
-                            }
-                    }
-                    if (self.selectedType == 2){ // Call
-                        Image(uiImage: generateQRCode(from: "tel:"+textIn))
-                            .interpolation(.none)
-                            .resizable()
-                            .scaledToFit()
-                            .padding()
-                            .contextMenu{
-                                    let image = generateQRCode(from: "tel:"+textIn)
-                                    let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
-                                    
-                                    ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
-                            }
-                    }
-                    if (self.selectedType == 3){ // SMS
-                        Image(uiImage: generateQRCode(from: "sms:"+textIn))
-                            .interpolation(.none)
-                            .resizable()
-                            .scaledToFit()
-                            .padding()
-                            .contextMenu{
-                                    let image = generateQRCode(from: "sms:"+textIn)
-                                    let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
-                                    
-                                    ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
-                            }
-                    }
-                    
-
+                    Image(uiImage: generateQRCode(from: formatQRData()))
+                        .interpolation(.none)
+                        .resizable()
+                        .scaledToFit()
+                        .padding()
+                        .contextMenu{
+                                let image = generateQRCode(from: formatQRData())
+                                let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
+                                
+                                ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
+                        }
                     Picker("QR Code Action", selection: $selectedType){
                         ForEach(0..<type.count, id: \.self) {
                             Text(self.type[$0])
@@ -86,9 +45,11 @@ struct ContentView: View {
                     .pickerStyle(.menu)
                     TextField("Type contents of QR code here", text: $textIn)
                         .autocorrectionDisabled()
-                        .keyboardType(.asciiCapable)
+                        .keyboardType(.webSearch)
+                        // TODO: Make keyboard type change based on action
                         .autocapitalization(.none)
                 }
+                
                 NavigationLink(destination: FavoritesView()) {
                     Text("Favorited QR Codes")
                 }
@@ -96,35 +57,31 @@ struct ContentView: View {
             
             //MARK: Navigation Toolbar
             .toolbar {
+                
                 ToolbarItem(placement: .topBarTrailing) {
                         NavigationLink(destination: SettingsView()) {
                             Image(systemName: "gear")
                         }
                 }
+                
                 ToolbarItem(placement: .topBarLeading) {
-                    
+                    // TODO: make clicking an already favorited QR code delete it from the list
                     Button(
                         action: {
-                            
+                            #if DEBUG
                             print("Favorite Button tapped!")
                             print(modelContext.container)
                             print(modelContext.hasChanges)
-                            if (self.selectedType == 0){ // Standard
-                                modelContext.insert(QRCode(data: textIn))
-                            } else if (self.selectedType == 1){ // Email
-                                modelContext.insert(QRCode(data: "mailto:"+textIn))
-                            } else if (self.selectedType == 2){ // Call
-                                modelContext.insert(QRCode(data: "tel:"+textIn))
-                            } else if (self.selectedType == 3){ // SMS
-                                modelContext.insert(QRCode(data: "sms:"+textIn))
-                            }
                             print(modelContext.hasChanges)
-
+                            #endif
+                            
+                            modelContext.insert(QRCode(data: formatQRData()))
+                            
                             do {
                                 try modelContext.save()
                                 print(modelContext.hasChanges)
                             } catch {
-                                print("Could not save context after fav")
+                                print("Could not save context after favorite")
                             }
                         }
                     ){
@@ -136,8 +93,26 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
     }
+    // MARK: formatQRCode func
+    // TextIn data formatting
+    func formatQRData()->String{
+        var data: String
+        
+        if (self.selectedType == 1) { // Email
+            data = "mailto:"+self.textIn
+        } else if (self.selectedType == 2) { // Call
+            data = "tel:"+self.textIn
+        } else if (self.selectedType == 3) { // SMS
+            data = "sms:"+self.textIn
+        } else {
+            data = self.textIn
+        }
+        
+        return data
+    }
 }
 
+// MARK: checkFavorited func
 func checkFavorited(items: [QRCode], textIn: String) -> Bool{
     for item in items {
         if (item.data == textIn){
