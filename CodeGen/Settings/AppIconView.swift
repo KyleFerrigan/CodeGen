@@ -15,82 +15,148 @@ struct AppIconView: View {
         List {
             Section("Icons"){
                 
-                //Default
-                Button(
-                    action: {
-                        resetIcon()
-                        self.iconName = getIconName()
-                        print("Default Icon Button tapped!")
+                // Default
+                HStack{
+                    Image("Preview-Default")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 35.0)
+                        .clipShape(.rect(cornerRadius: 5))
+                    Button(
+                        action: {
+                            resetIcon()
+                            self.iconName = getIconName()
+                            print("Default Icon Button tapped!")
+                        }
+                    ){
+                        Text("Default")
                     }
-                ){
-                    Text("Default")
                 }
+                .padding(0.6)
                 
-                //Light
-                Button(
-                    action: {
-                        changeIcon(iconName: "AppIcon-Teal-Light")
-                        self.iconName = getIconName()
-                        print("Light Button tapped!")
-                    }
-                ){
-                    Text("Light")
-                }
                 
-                //OLED
-                Button(
-                    action: {
-                        changeIcon(iconName: "AppIcon-Teal-OLED")
-                        self.iconName = getIconName()
-                        print("OLED Button tapped!")
-                    }
-                ){
-                    Text("OLED")
-                }
                 
-                //Classic QR
-                Button(
-                    action: {
-                        changeIcon(iconName: "AppIcon-Classic")
-                        self.iconName = getIconName()
-                        print("Classic QR Button tapped!")
+                // OLED
+                HStack{
+                    Image("Preview-OLED")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 35.0)
+                        .clipShape(.rect(cornerRadius: 5))
+                    
+                    Button(
+                        action: {
+                            changeIcon(iconName: "AppIcon-OLED")
+                            self.iconName = getIconName()
+                            print("OLED Button tapped!")
+                        }
+                    ){
+                        Text("OLED")
                     }
-                ){
-                    Text("Classic QR")
-                }
+                } 
+                .padding(0.6)
                 
-                //Midnight
-                Button(
-                    action: {
-                        changeIcon(iconName: "AppIcon-OLED")
-                        self.iconName = getIconName()
-                        print("Midnight Button tapped!")
+                // Eclipse
+                HStack{
+                    Image("Preview-Eclipse")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 35.0)
+                        .clipShape(.rect(cornerRadius: 5))
+                    
+                    Button(
+                        action: {
+                            changeIcon(iconName: "AppIcon-Eclipse")
+                            self.iconName = getIconName()
+                            print("Midnight Button tapped!")
+                        }
+                    ){
+                        Text("Eclipse")
                     }
-                ){
-                    Text("Midnight")
                 }
+                .padding(0.6)
                 
-                //Blueberry
-                Button(
-                    action: {
-                        changeIcon(iconName: "AppIcon-Blueberry")
-                        self.iconName = getIconName()
-                        print("Blueberry Button tapped!")
+                // Light
+                HStack{
+                    Image("Preview-Light")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 35.0)
+                        .clipShape(.rect(cornerRadius: 5))
+                    
+                    Button(
+                        action: {
+                            changeIcon(iconName: "AppIcon-Light")
+                            self.iconName = getIconName()
+                            print("Light Button tapped!")
+                        }
+                    ){
+                        Text("Light")
                     }
-                ){
-                    Text("Blueberry")
                 }
+                .padding(0.6)
+               
+                // Classic QR
+                HStack{
+                    Image("Preview-Classic")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 35.0)
+                        .clipShape(.rect(cornerRadius: 5))
+                    
+                    Button(
+                        action: {
+                            changeIcon(iconName: "AppIcon-Classic")
+                            self.iconName = getIconName()
+                            print("Classic QR Button tapped!")
+                        }
+                    ){
+                        Text("Classic")
+                    }
+                }
+                .padding(0.6)
                 
-                //Best Buy
-                Button(
-                    action: {
-                        changeIcon(iconName: "AppIcon-BBY")
-                        self.iconName = getIconName()
-                        print("Best Bargain Button tapped!")
+                
+                // Blueberry
+                HStack{
+                    Image("Preview-Blueberry")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 35.0)
+                        .clipShape(.rect(cornerRadius: 5))
+                    
+                    Button(
+                        action: {
+                            changeIcon(iconName: "AppIcon-Blueberry")
+                            self.iconName = getIconName()
+                            print("Blueberry Button tapped!")
+                        }
+                    ){
+                        Text("Blueberry")
                     }
-                ){
-                    Text("Best Bargain")
                 }
+                .padding(0.6)
+                
+                // Best Buy
+                HStack{
+                    Image("Preview-BBY")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 35.0)
+                        .clipShape(.rect(cornerRadius: 5))
+                    
+                    Button(
+                        action: {
+                            changeIcon(iconName: "AppIcon-BBY")
+                            self.iconName = getIconName()
+                            print("Best Bargain Button tapped!")
+                        }
+                    ){
+                        Text("Best Bargain")
+                    }
+                }
+                .padding(0.6)
+                
             }
             #if DEBUG
             //MARK: Debug Section
