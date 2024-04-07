@@ -109,7 +109,15 @@ struct ContentView: View {
                             print("Favorite Button tapped!")
                             print(modelContext.container)
                             print(modelContext.hasChanges)
-                            modelContext.insert(QRCode(data: textIn))
+                            if (self.selectedType == 0){ // Standard
+                                modelContext.insert(QRCode(data: textIn))
+                            } else if (self.selectedType == 1){ // Email
+                                modelContext.insert(QRCode(data: "mailto:"+textIn))
+                            } else if (self.selectedType == 2){ // Call
+                                modelContext.insert(QRCode(data: "tel:"+textIn))
+                            } else if (self.selectedType == 3){ // SMS
+                                modelContext.insert(QRCode(data: "sms:"+textIn))
+                            }
                             print(modelContext.hasChanges)
 
                             do {
