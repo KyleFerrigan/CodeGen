@@ -14,7 +14,7 @@ struct AccentColorView: View {
         List{
             Button(
                 action: {
-                    userAccentChoice = 1
+                    userAccentChoice = 0
                     print("Red Button tapped!")
                 }
             ){
@@ -22,7 +22,7 @@ struct AccentColorView: View {
             }
             Button(
                 action: {
-                    userAccentChoice = 2
+                    userAccentChoice = 1
                     print("Green Button tapped!")
                 }
             ){
@@ -30,7 +30,7 @@ struct AccentColorView: View {
             }
             Button(
                 action: {
-                    userAccentChoice = 3
+                    userAccentChoice = 2
                     print("Blue Button tapped!")
                 }
             ){
@@ -38,7 +38,7 @@ struct AccentColorView: View {
             }
             Button(
                 action: {
-                    userAccentChoice = 4
+                    userAccentChoice = 3
                     print("Orange Button tapped!")
                 }
             ){
@@ -46,7 +46,7 @@ struct AccentColorView: View {
             }
             Button(
                 action: {
-                    userAccentChoice = 5
+                    userAccentChoice = 4
                     print("Purple Button tapped!")
                 }
             ){
@@ -54,7 +54,7 @@ struct AccentColorView: View {
             }
             Button(
                 action: {
-                    userAccentChoice = 6
+                    userAccentChoice = 5
                     print("Yellow Button tapped!")
                 }
             ){
@@ -62,7 +62,7 @@ struct AccentColorView: View {
             }
             Button(
                 action: {
-                    userAccentChoice = 7
+                    userAccentChoice = 6
                     print("Mint Button tapped!")
                 }
             ){
@@ -70,7 +70,7 @@ struct AccentColorView: View {
             }
             Button(
                 action: {
-                    userAccentChoice = 8
+                    userAccentChoice = 7
                     print("Gray Button tapped!")
                 }
             ){
