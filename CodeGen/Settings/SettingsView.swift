@@ -19,6 +19,9 @@ struct SettingsView: View {
                 }
                 // TODO: QR Code Saving Quality - Standard vs 4K vs 8K
             }
+            Text("© Kyle Ferrigan")
+                .font(.footnote)
+                .fontWeight(.thin)
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
         }
