@@ -33,7 +33,7 @@ struct ContentView: View {
                         .padding()
                         .contextMenu{
                                 let image = generateQRCode(from: formatQRData())
-                                let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
+                                let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 2560, height: 2560))
                                 
                                 ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
                         }
@@ -44,6 +44,7 @@ struct ContentView: View {
                     }
                     .pickerStyle(.menu)
                     TextField("Type contents of QR code here", text: $textIn)
+                        // TODO: Make text change depending on action EG "phone says enter phone number"
                         .autocorrectionDisabled()
                         .keyboardType(.webSearch)
                         // TODO: Make keyboard type change based on action

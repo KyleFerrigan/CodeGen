@@ -23,7 +23,7 @@ struct FavoritesView: View {
                         .padding()
                         .contextMenu{
                             let image = generateQRCode(from: item.data!)
-                            let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
+                            let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 2560, height: 2560))
                             
                             ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
                         }
