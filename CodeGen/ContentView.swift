@@ -12,6 +12,9 @@ struct ContentView: View {
     @State var textIn: String = ""
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [QRCode]
+    @State private var type = ["Standard", "Email",  "Call", "SMS"]
+    //@State private var selectedType: String = "Standard"
+    @State private var selectedType: Int = 0
 
     var body: some View {
         //Keeps track if current QR Code has been favorited or not
@@ -21,18 +24,66 @@ struct ContentView: View {
             //MARK: Main View
             List {
                 Section{
-                    Image(uiImage: generateQRCode(from: textIn))
-                        .interpolation(.none)
-                        .resizable()
-                        .scaledToFit()
-                        .padding()
-                        .contextMenu{
-                            let image = generateQRCode(from: textIn)
-                            let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
-                            
-                            ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
-                        }
+                    if (self.selectedType == 0){ // Standard
+                        Image(uiImage: generateQRCode(from: textIn))
+                            .interpolation(.none)
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
+                            .contextMenu{
+                                    let image = generateQRCode(from: textIn)
+                                    let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
+                                    
+                                    ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
+                            }
+                    }
+                    if (self.selectedType == 1){ // Email
+                        Image(uiImage: generateQRCode(from: "mailto:"+textIn))
+                            .interpolation(.none)
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
+                            .contextMenu{
+                                    let image = generateQRCode(from: "mailto:"+textIn)
+                                    let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
+                                    
+                                    ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
+                            }
+                    }
+                    if (self.selectedType == 2){ // Call
+                        Image(uiImage: generateQRCode(from: "tel:"+textIn))
+                            .interpolation(.none)
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
+                            .contextMenu{
+                                    let image = generateQRCode(from: "tel:"+textIn)
+                                    let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
+                                    
+                                    ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
+                            }
+                    }
+                    if (self.selectedType == 3){ // SMS
+                        Image(uiImage: generateQRCode(from: "sms:"+textIn))
+                            .interpolation(.none)
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
+                            .contextMenu{
+                                    let image = generateQRCode(from: "sms:"+textIn)
+                                    let scaledimage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 1000, height: 1000))
+                                    
+                                    ShareLink(item: Image(uiImage: scaledimage), preview: SharePreview("My QR Code", image: Image(uiImage: image)))
+                            }
+                    }
                     
+
+                    Picker("QR Code Action", selection: $selectedType){
+                        ForEach(0..<type.count, id: \.self) {
+                            Text(self.type[$0])
+                        }
+                    }
+                    .pickerStyle(.menu)
                     TextField("Type contents of QR code here", text: $textIn)
                         .autocorrectionDisabled()
                         .keyboardType(.asciiCapable)
