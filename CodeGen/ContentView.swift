@@ -46,7 +46,7 @@ struct ContentView: View {
                     TextField("Type contents of QR code here", text: $textIn)
                         // TODO: Make text change depending on action EG "phone says enter phone number"
                         .autocorrectionDisabled()
-                        .keyboardType(.webSearch)
+                        .keyboardType(.default)
                         // TODO: Make keyboard type change based on action
                         .autocapitalization(.none)
                 }
