@@ -14,6 +14,9 @@ struct ContentView: View {
     @Query private var items: [QRCode]
 
     var body: some View {
+        //Keeps track if current QR Code has been favorited or not
+        @State var favorited: Bool = checkFavorited(items: self.items, textIn: self.textIn)
+        
         NavigationStack {
             //MARK: Main View
             List {
@@ -36,8 +39,8 @@ struct ContentView: View {
                         .autocapitalization(.none)
                 }
                 NavigationLink(destination: FavoritesView()) {
-                          Text("Favorited QR Codes")
-                        }
+                    Text("Favorited QR Codes")
+                }
             }
             
             //MARK: Navigation Toolbar
@@ -66,7 +69,7 @@ struct ContentView: View {
                             }
                         }
                     ){
-                        Label("Favorite", systemImage: "star.circle")
+                        Label("Favorite", systemImage: favorited ? "star.circle.fill" : "star.circle")
                     }
                 }
             }
@@ -74,6 +77,15 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
     }
+}
+
+func checkFavorited(items: [QRCode], textIn: String) -> Bool{
+    for item in items {
+        if (item.data == textIn){
+            return true
+        }
+    }
+    return false
 }
 
 #Preview {
