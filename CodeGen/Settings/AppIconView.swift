@@ -68,7 +68,7 @@ struct AppIconView: View {
                         action: {
                             changeIcon(iconName: "AppIcon-Eclipse")
                             self.iconName = getIconName()
-                            print("Midnight Button tapped!")
+                            print("Eclipse Button tapped!")
                         }
                     ){
                         Text("Eclipse")
