@@ -77,16 +77,13 @@ struct ContentView: View {
                             #endif
                             
                             if !favorited {
-                                modelContext.insert(QRCode(data: formatQRData()))
-                            } else {
-                                //TODO: Remove Favorite
-                            }
-                            
-                            do {
-                                try modelContext.save()
-                                print(modelContext.hasChanges)
-                            } catch {
-                                print("Could not save context after favorite")
+                                modelContext.insert(QRCode(data: formatQRData(), position: items.count+1))
+                                do {
+                                    try modelContext.save()
+                                    print(modelContext.hasChanges)
+                                } catch {
+                                    print("Could not save context after favorite")
+                                }
                             }
                         }
                     ){

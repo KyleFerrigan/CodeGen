@@ -11,10 +11,12 @@ import SwiftData
 struct FavoritesView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [QRCode]
-    
     var body: some View {
+        let sortedItems = items.sorted(by: { $0.position ?? 0 < $1.position ?? 1 })
         List {
             ForEach (items){ item in
+            // Add when sorting functionality is achieved
+            //ForEach (sortedItems){ item in
                 VStack{
                     Image(uiImage: generateQRCode(from: item.data!))
                         .interpolation(.none)
@@ -30,7 +32,21 @@ struct FavoritesView: View {
                     Text(item.data!)
                 }
             }
+            
             .onDelete(perform: deleteItems)
+            
+            //Crude but direct move
+            /*.onMove(perform: { indices, newOffset in
+                var updatedItems = items
+                updatedItems.move(fromOffsets: indices, toOffset: newOffset)
+                
+                for item in items {
+                    modelContext.delete(item)
+                }
+                for item in updatedItems {
+                    modelContext.insert(item)
+                }
+            })*/
         }
         .navigationTitle("Favorites")
         .navigationBarTitleDisplayMode(.inline)
@@ -43,7 +59,7 @@ struct FavoritesView: View {
                 do {
                     try modelContext.save()
                 } catch {
-                    print("Could not save context after del")
+                    print("Could not save context after delete")
                 }
                 
             }
