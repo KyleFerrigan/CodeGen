@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "CodeGenBold.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

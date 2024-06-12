@@ -13,7 +13,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [QRCode]
     
-    @State private var type = ["Standard", "Email",  "Call", "SMS"]
+    @State private var type = ["Standard", "Email",  "Call", "SMS"] // TODO: Add WiFi Network Functionality
     @State private var selectedType: Int = 0
     
     @State var textIn: String = ""

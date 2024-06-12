@@ -17,7 +17,7 @@ struct AppIconView: View {
                 
                 // Default
                 HStack{
-                    Image("Preview-Default")
+                    Image("Preview-Dynamic")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 35.0)
@@ -29,7 +29,7 @@ struct AppIconView: View {
                             print("Default Icon Button tapped!")
                         }
                     ){
-                        Text("Default")
+                        Text("Dynamic (Default)")
                     }
                 }
                 .padding(0.6)
