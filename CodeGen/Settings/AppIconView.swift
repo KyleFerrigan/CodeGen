@@ -15,9 +15,8 @@ struct AppIconView: View {
         List {
             Section("Icons"){
                 
-                // Default
                 HStack{
-                    Image("Preview-Dynamic")
+                    Image("Preview-Default")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 35.0)
@@ -29,7 +28,26 @@ struct AppIconView: View {
                             print("Default Icon Button tapped!")
                         }
                     ){
-                        Text("Dynamic (Default)")
+                        Text("Default")
+                    }
+                }
+                .padding(0.6)
+                
+                // iOS 18
+                HStack{
+                    Image("Preview-Dynamic")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 35.0)
+                        .clipShape(.rect(cornerRadius: 5))
+                    Button(
+                        action: {
+                            changeIcon(iconName: "AppIcon-iOS18")
+                            self.iconName = getIconName()
+                            print("iOS18 Icon button Tapped")
+                        }
+                    ){
+                        Text("Dynamic (iOS 18 Beta)")
                     }
                 }
                 .padding(0.6)
