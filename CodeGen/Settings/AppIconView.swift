@@ -23,12 +23,12 @@ struct AppIconView: View {
                         .clipShape(.rect(cornerRadius: 5))
                     Button(
                         action: {
-                            resetIcon()
+                            changeIcon(iconName: "AppIcon")
                             self.iconName = getIconName()
                             print("Default Icon Button tapped!")
                         }
                     ){
-                        Text("Default")
+                        Text("Static")
                     }
                 }
                 .padding(0.6)
@@ -42,12 +42,13 @@ struct AppIconView: View {
                         .clipShape(.rect(cornerRadius: 5))
                     Button(
                         action: {
-                            changeIcon(iconName: "AppIcon-iOS18")
+                            resetIcon()
+                            
                             self.iconName = getIconName()
                             print("iOS18 Icon button Tapped")
                         }
                     ){
-                        Text("Dynamic (iOS 18 Beta)")
+                        Text("Dynamic (iOS 18)")
                     }
                 }
                 .padding(0.6)
