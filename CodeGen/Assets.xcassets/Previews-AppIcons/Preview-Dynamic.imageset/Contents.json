@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "CodeGenBold.png",
+      "filename" : "Gradient-Light.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Gradient-Dark.png",
       "idiom" : "universal"
     }
   ],
